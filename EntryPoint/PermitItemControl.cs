@@ -165,7 +165,7 @@ namespace EntryPoint
             moving.User = User.Empty;
             moving.Save(Database);
 
-            if (Permit.IsMultiEntry)
+            if (Permit.IsMultiEntry && Permit.DateTo >= DateTime.Today)
                 RaiseCloseControl("Пропуск " + Permit.ShortNumber + ": ВЫЕЗД " + moving.MovingTime.ToString("dd.MM.yyyy HH:mm"));
             else
                 ClosePermit();

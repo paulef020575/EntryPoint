@@ -25,9 +25,9 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Проезд автотранспорта</ProductName>
     <PublisherName>ОАО Кондопога</PublisherName>
-    <MinimumRequiredVersion>0.0.1.3</MinimumRequiredVersion>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
+    <MinimumRequiredVersion>0.0.2.0</MinimumRequiredVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>0.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>

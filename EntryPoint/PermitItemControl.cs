@@ -42,7 +42,7 @@ namespace EntryPoint
         {
             lblPermitNumber.Text = Permit.ShortNumber;
             lblPeriod.Text = Permit.ActivePeriod;
-            lblEntryPoint.Text = "Допустимые пункты пропуска: " + Permit.EntryPoint.ToString();
+            //lblEntryPoint.Text = "Допустимые пункты пропуска: " + Permit.EntryPoint.ToString();
 
             lblVehicle.Text = Permit.Vehicle.ToString();
             lblDriver.Text = Permit.DriverName;
@@ -51,8 +51,9 @@ namespace EntryPoint
 
             tboxComment.Text = Permit.GetComment(Database);
 
-            if (Permit.EntryPoint.Equals(EntryControl.Classes.EntryPoint.Empty)
-                || Permit.EntryPoint.Equals(EntryPoint))
+            //if (Permit.EntryPoint.Equals(EntryControl.Classes.EntryPoint.Empty)
+            //    || Permit.EntryPoint.Equals(EntryPoint))
+            if (Permit.CheckEntryPoint(Database, EntryPoint))
             {
                 lblEntryPoint.ForeColor = SystemColors.ControlText;
                 btnEntry.Enabled = true;
@@ -78,27 +79,29 @@ namespace EntryPoint
 
 
             //dgvMoving.DataSource = PermitMoving.LoadList(Database, Permit);
-            materialPermit = Permit.GetMaterialPermit(Database);
-            if (materialPermit != null)
-            {
-                lblMaterialPermit.Text = materialPermit.ToString();
-                ShowMaterialPermit();
-            }
-            else
-            {
-                lblMaterialPermit.Text = "Не прикреплен";
-                materialPermitPanel.Visible = false;
-            }
+            //materialPermit = Permit.GetMaterialPermit(Database);
+            //if (materialPermit != null)
+            //{
+            //    lblMaterialPermit.Text = materialPermit.ToString();
+            //    ShowMaterialPermit();
+            //}
+            //else
+            //{
+            //    lblMaterialPermit.Text = "Не прикреплен";
+            //    materialPermitPanel.Visible = false;
+            //}
 
-            if (materialPermit != null && !materialPermit.CanExit)
-            {
-                labelCannotExit.Visible = true;
-                btnExit.Enabled = false;
-            }
-            else
-            {
-                labelCannotExit.Visible = false;
-            }
+            //if (materialPermit != null && !materialPermit.CanExit)
+            //{
+            //    labelCannotExit.Visible = true;
+            //    btnExit.Enabled = false;
+            //}
+            //else
+            //{
+            //    labelCannotExit.Visible = false;
+            //}
+
+            lboxPointList.DataSource = Permit.GetAllowedPointList(Database);
 
             if (btnExit.Enabled)
                 btnExit.BackColor = Color.LightSalmon;

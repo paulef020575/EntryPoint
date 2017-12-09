@@ -58,6 +58,7 @@
             this.lblMaterialPermit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tboxComment = new System.Windows.Forms.TextBox();
+            this.lboxPointList = new System.Windows.Forms.ListBox();
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -72,24 +73,27 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.67F));
-            this.tableLayoutPanel1.Controls.Add(this.lblEntryPoint, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblEntryPoint, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblPermitNumber, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblPeriod, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.tboxComment, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tboxComment, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lboxPointList, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(717, 486);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -97,12 +101,13 @@
             // 
             this.lblEntryPoint.AutoSize = true;
             this.lblEntryPoint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEntryPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblEntryPoint.Location = new System.Drawing.Point(3, 140);
+            this.lblEntryPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEntryPoint.Location = new System.Drawing.Point(3, 210);
             this.lblEntryPoint.Name = "lblEntryPoint";
-            this.lblEntryPoint.Size = new System.Drawing.Size(232, 70);
-            this.lblEntryPoint.TabIndex = 3;
-            this.lblEntryPoint.Text = "lblEntryPoint";
+            this.lblEntryPoint.Size = new System.Drawing.Size(232, 150);
+            this.lblEntryPoint.TabIndex = 9;
+            this.lblEntryPoint.Text = "Разрешенные пункты пропуска";
+            this.lblEntryPoint.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // flowLayoutPanel1
             // 
@@ -269,7 +274,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(3, 213);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(711, 187);
+            this.groupBox1.Size = new System.Drawing.Size(711, 1);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Материальный пропуск";
@@ -417,9 +422,9 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 403);
+            this.label1.Location = new System.Drawing.Point(3, 360);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 83);
+            this.label1.Size = new System.Drawing.Size(232, 126);
             this.label1.TabIndex = 7;
             this.label1.Text = "Комментарий";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -429,13 +434,27 @@
             this.tboxComment.BackColor = System.Drawing.SystemColors.Window;
             this.tboxComment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tboxComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tboxComment.Location = new System.Drawing.Point(241, 406);
+            this.tboxComment.Location = new System.Drawing.Point(241, 363);
             this.tboxComment.Multiline = true;
             this.tboxComment.Name = "tboxComment";
             this.tboxComment.ReadOnly = true;
-            this.tboxComment.Size = new System.Drawing.Size(473, 77);
+            this.tboxComment.Size = new System.Drawing.Size(473, 120);
             this.tboxComment.TabIndex = 8;
             this.tboxComment.TabStop = false;
+            // 
+            // lboxPointList
+            // 
+            this.lboxPointList.DisplayMember = "Point";
+            this.lboxPointList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lboxPointList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lboxPointList.FormattingEnabled = true;
+            this.lboxPointList.ItemHeight = 20;
+            this.lboxPointList.Location = new System.Drawing.Point(241, 213);
+            this.lboxPointList.Name = "lboxPointList";
+            this.lboxPointList.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lboxPointList.Size = new System.Drawing.Size(473, 144);
+            this.lboxPointList.TabIndex = 10;
+            this.lboxPointList.UseTabStops = false;
             // 
             // PermitItemControl
             // 
@@ -469,7 +488,6 @@
         private System.Windows.Forms.ToolTip toolTips;
         private System.Windows.Forms.Label lblPermitNumber;
         private System.Windows.Forms.Label lblPeriod;
-        private System.Windows.Forms.Label lblEntryPoint;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblVehicle;
         private System.Windows.Forms.Label lblDriver;
@@ -490,5 +508,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMaterialUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTonnage;
+        private System.Windows.Forms.Label lblEntryPoint;
+        private System.Windows.Forms.ListBox lboxPointList;
     }
 }

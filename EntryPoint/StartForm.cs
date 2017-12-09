@@ -45,7 +45,7 @@ namespace EntryPoint
             try
             {
 #if DEBUG
-                return new EntryControlDatabase("localhost", "d:\\prog\\dispatcher\\dispatcher.fdb");
+                return new EntryControlDatabase("localhost", @"C:\Prog\dispatcher\DISPATCHER.FDB", "sysdba", "masterkey");
 #endif
                 return new EntryControlDatabase(Settings.Default.Server, Settings.Default.Path);
             }

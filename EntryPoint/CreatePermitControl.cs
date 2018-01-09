@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using EntryControl.Classes;
+using EntryPoint.Properties;
 
 namespace EntryPoint
 {
@@ -78,6 +79,17 @@ namespace EntryPoint
             permit.DateTo = DateTime.Today.AddDays(1);
             permit.DocNumber = Permit.GetPermitNumber(Database, permit.Period);
             permit.Cargo = EntryControlDatabase.WoodCargo;
+            permit.IsMultiEntry = false;
+
+            List<PermitPoint> pointList = permit.GetPointList(Database);
+            int currentPointId = Settings.Default.EntryPoint;
+
+            EntryControl.Classes.EntryPoint currentPoint = EntryControl.Classes.EntryPoint.Load(Database, currentPointId);
+            permit.Comment = "Создан на проходной " + currentPoint.ToString() + Environment.NewLine + "Объем л/мат: ";
+
+            foreach (PermitPoint item in pointList)
+                if (item.Point.Id == currentPointId)
+                    item.IsAllowed = true;
 
             return permit;
         }

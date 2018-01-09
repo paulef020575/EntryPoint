@@ -145,7 +145,7 @@
             this.pnlKeyboard.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlKeyboard.Location = new System.Drawing.Point(0, 220);
             this.pnlKeyboard.Name = "pnlKeyboard";
-            this.pnlKeyboard.Size = new System.Drawing.Size(336, 446);
+            this.pnlKeyboard.Size = new System.Drawing.Size(336, 476);
             this.pnlKeyboard.TabIndex = 2;
             // 
             // button1
@@ -338,7 +338,7 @@
             this.resultPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resultPanel.Location = new System.Drawing.Point(336, 220);
             this.resultPanel.Name = "resultPanel";
-            this.resultPanel.Size = new System.Drawing.Size(660, 446);
+            this.resultPanel.Size = new System.Drawing.Size(660, 476);
             this.resultPanel.TabIndex = 3;
             // 
             // panelFind
@@ -382,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 666);
+            this.ClientSize = new System.Drawing.Size(996, 696);
             this.Controls.Add(this.resultPanel);
             this.Controls.Add(this.pnlKeyboard);
             this.Controls.Add(this.panelFind);
@@ -425,7 +425,6 @@
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnClear;
-
     }
 }
 

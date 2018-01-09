@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using EntryControl.Classes;
 using EntryPoint.Properties;
+using System.Reflection;
 
 namespace EntryPoint
 {
@@ -45,7 +46,7 @@ namespace EntryPoint
             try
             {
 #if DEBUG
-                return new EntryControlDatabase("localhost", @"C:\Prog\dispatcher\DISPATCHER.FDB", "sysdba", "masterkey");
+                return new EntryControlDatabase("localhost", @"C:\Prog\dispatcher\DISPATCHER.FDB", "sysdba11", "masterkey");
 #endif
                 return new EntryControlDatabase(Settings.Default.Server, Settings.Default.Path);
             }
@@ -245,5 +246,6 @@ namespace EntryPoint
         {
             tboxNumber.Clear();
         }
+
     }
 }

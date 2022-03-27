@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using EntryControl.Classes;
 using EntryPoint.Properties;
 using System.Reflection;
+using EntryPoint.Wood;
 
 namespace EntryPoint
 {
@@ -28,6 +29,8 @@ namespace EntryPoint
             entryPoint = InitializeEntryPoint();
 
             Text = entryPoint.ToString();
+
+            resultPanel.Controls.Add(new WoodVolumeControl() { Dock = DockStyle.Fill });
         }
 
         private EntryControl.Classes.EntryPoint InitializeEntryPoint()

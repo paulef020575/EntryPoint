@@ -53,6 +53,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonSkip = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.tboxComment = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsDocument)).BeginInit();
@@ -315,6 +316,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.buttonOK);
+            this.panel1.Controls.Add(this.buttonSkip);
             this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 458);
@@ -326,20 +328,30 @@
             // buttonOK
             // 
             this.buttonOK.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonOK.Location = new System.Drawing.Point(682, 2);
+            this.buttonOK.Location = new System.Drawing.Point(507, 2);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(100, 35);
+            this.buttonOK.Size = new System.Drawing.Size(125, 35);
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // buttonSkip
+            // 
+            this.buttonSkip.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonSkip.Location = new System.Drawing.Point(632, 2);
+            this.buttonSkip.Name = "buttonSkip";
+            this.buttonSkip.Size = new System.Drawing.Size(125, 35);
+            this.buttonSkip.TabIndex = 2;
+            this.buttonSkip.Text = "Пропустить";
+            this.buttonSkip.UseVisualStyleBackColor = true;
+            // 
             // buttonCancel
             // 
             this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCancel.Location = new System.Drawing.Point(782, 2);
+            this.buttonCancel.Location = new System.Drawing.Point(757, 2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 35);
+            this.buttonCancel.Size = new System.Drawing.Size(125, 35);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -403,5 +415,6 @@
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.TextBox tboxComment;
+        private System.Windows.Forms.Button buttonSkip;
     }
 }
